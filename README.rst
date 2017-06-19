@@ -1,7 +1,7 @@
 RHO Django User
 ===============
 
-A "Russell's Humble Opinion" Django Custom User model.
+A "RKM's Humble Opinion" package for Django's Custom User model.
 
 A custom Django user model that encompasses best practices:
 
@@ -13,12 +13,12 @@ A custom Django user model that encompasses best practices:
 Usage:
 ------
 
- * Add `rhouser` to `INSTALLED_APPS`
- * Add `AUTH_USER_MODEL="rhouser.User"` to your `settings.py` file.
+* Add `rhouser` to `INSTALLED_APPS`
+* Add `AUTH_USER_MODEL="rhouser.User"` to your `settings.py` file.
 
 To run tests:
 -------------
 
-Run:
+Run::
 
     > python runtests.py
