@@ -8,7 +8,7 @@ from django.contrib.auth.models import AnonymousUser, Group, Permission
 from django.contrib.contenttypes.models import ContentType
 from django.test import TestCase, override_settings, modify_settings
 
-from simpleuser.models import User
+from rhouser.models import User
 
 
 class CountingMD5PasswordHasher(MD5PasswordHasher):
@@ -177,7 +177,7 @@ class BaseModelBackendTest(object):
         user = self.UserModel._default_manager.get(pk=self.superuser.pk)
         self.assertEqual(len(user.get_all_permissions()), len(Permission.objects.all()))
 
-    @override_settings(PASSWORD_HASHERS=['simpleuser.tests.test_auth_backends.CountingMD5PasswordHasher'])
+    @override_settings(PASSWORD_HASHERS=['rhouser.tests.test_auth_backends.CountingMD5PasswordHasher'])
     def test_authentication_timing(self):
         """Hasher is run once regardless of whether the user exists. Refs #20760."""
         # Re-set the password, because this tests overrides PASSWORD_HASHERS
@@ -194,13 +194,13 @@ class BaseModelBackendTest(object):
         self.assertEqual(CountingMD5PasswordHasher.calls, 1)
 
 
-@modify_settings(INSTALLED_APPS={'append': 'simpleuser'})
-@override_settings(AUTH_USER_MODEL='simpleuser.User')
+@modify_settings(INSTALLED_APPS={'append': 'rhouser'})
+@override_settings(AUTH_USER_MODEL='rhouser.User')
 class ModelBackendTest(BaseModelBackendTest, TestCase):
     """
-    Tests for the ModelBackend using the simpleuser User model.
+    Tests for the ModelBackend using the rhouser User model.
 
-    This isn't a perfect test, because both auth.User and simpleuser.User are
+    This isn't a perfect test, because both auth.User and rhouser.User are
     synchronized to the database, which wouldn't ordinary happen in
     production. As a result, it doesn't catch errors caused by the non-
     existence of the User table.

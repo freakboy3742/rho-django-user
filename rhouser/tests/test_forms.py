@@ -8,12 +8,12 @@ from django.test import TestCase, override_settings
 from django.utils.encoding import force_text
 from django.utils.translation import ugettext as _
 
-from simpleuser.models import User
-from simpleuser.forms import UserCreationForm, UserChangeForm
+from rhouser.models import User
+from rhouser.forms import UserCreationForm, UserChangeForm
 
 
 @override_settings(
-    AUTH_USER_MODEL='simpleuser.User',
+    AUTH_USER_MODEL='rhouser.User',
     USE_TZ=False,
     PASSWORD_HASHERS=('django.contrib.auth.hashers.SHA1PasswordHasher',),
 )
@@ -101,7 +101,7 @@ class UserCreationFormTest(TestCase):
 
 
 @override_settings(
-    AUTH_USER_MODEL='simpleuser.User',
+    AUTH_USER_MODEL='rhouser.User',
     USE_TZ=False,
     PASSWORD_HASHERS=('django.contrib.auth.hashers.SHA1PasswordHasher',)
 )

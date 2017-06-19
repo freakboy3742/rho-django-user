@@ -26,7 +26,7 @@ def run_test_suite():
             "django.contrib.contenttypes",
             "django.contrib.sessions",
             "django.contrib.sites",
-            "simpleuser",
+            "rhouser",
         ],
     )
 

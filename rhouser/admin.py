@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.utils.translation import ugettext_lazy as _
 
-from simpleuser.forms import UserChangeForm, UserCreationForm
-from simpleuser.models import User
+from rhouser.forms import UserChangeForm, UserCreationForm
+from rhouser.models import User
 
 
 class UserAdmin(BaseUserAdmin):

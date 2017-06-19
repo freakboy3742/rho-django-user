@@ -1,11 +1,11 @@
 from django.core import mail
 from django.test import TestCase, override_settings, modify_settings
 
-from simpleuser.models import AbstractUser, User, UserManager
+from rhouser.models import AbstractUser, User, UserManager
 
 
-@modify_settings(INSTALLED_APPS={'append': 'simpleuser'})
-@override_settings(AUTH_USER_MODEL='simpleuser.User')
+@modify_settings(INSTALLED_APPS={'append': 'rhouser'})
+@override_settings(AUTH_USER_MODEL='rhouser.User')
 class UserManagerTestCase(TestCase):
 
     def test_create_user(self):
@@ -36,7 +36,7 @@ class UserManagerTestCase(TestCase):
         )
 
 
-@override_settings(AUTH_USER_MODEL='simpleuser.User')
+@override_settings(AUTH_USER_MODEL='rhouser.User')
 class AbstractUserTestCase(TestCase):
     def test_email_user(self):
         # valid send_mail parameters

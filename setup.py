@@ -9,13 +9,13 @@ with io.open('README.rst', encoding='utf8') as readme:
 
 
 setup(
-    name='django-simpleuser',
-    version='0.1.0',
-    description='A custom Django user model for best practices email-based login.',
+    name='django-rhouser',
+    version='1.0.0',
+    description='RHO: A custom Django user model for best practices email-based login.',
     long_description=long_description,
     author='Russell Keith-Magee',
     author_email='russell@keith-magee.com',
-    url='http://github.com/jambonsw/simpleuser/',
+    url='http://github.com/freakboy3742/rhouser/',
     packages=find_packages(exclude=['docs', 'tests']),
     install_requires=[
         'django>=1.8'

@@ -16,7 +16,7 @@ except ImportError:
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.utils.translation import ugettext as _
 
-from simpleuser.models import User
+from rhouser.models import User
 
 
 class AbstractUserCreationForm(forms.ModelForm):
